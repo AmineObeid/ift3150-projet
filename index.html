@@ -24,7 +24,9 @@
         
         <h2>Progrès hebdomadaire: </h2>
         <ul> 
-            <li>Semaine 9 : Télécharger le jeu de données STL10 qui n’est pas déjà fourni par DRAC, donc pour ce faire, j’ai dû le transférer de mon ordinateur en utilisant le logiciel Globus. Après l’avoir sur mon compte Narval, j'ai aussi exécuté les trois types d’expériences sur ce jeu de données pour les comparer avec le modèle avant les nouvelles modifications et mis les résultats sur wandb. En se faisant, j’ai trouvé un petit bug dans le code.</li>
+            <li>Semaine 11-12 : Dans ces deux semaines, j'avais principalement accompli la re-écriture du code pour tracer les graphes afin d'avoir un code généralisable et réutilisable. J'avais aussi inspecter le papier de recherche qui introduit MULLER, un redimensionneur, pour obtenir quelques idées clés. En addition, j'avais appris davantage sur le FID (Fréchet Inception Distance), une métrique pour évaluer les modèles qui font de la diffusion, ce qu'on compte faire dans le futur du projet. Après avoir compris la théorie de cette métrique, j'ai implémenté une première version qui la calcule dans le code. </li>
+                
+            <li>Semaine 9-10 : Télécharger le jeu de données STL10 qui n’est pas déjà fourni par DRAC, donc pour ce faire, j’ai dû le transférer de mon ordinateur en utilisant le logiciel Globus. Après l’avoir sur mon compte Narval, j'ai aussi exécuté les trois types d’expériences sur ce jeu de données pour les comparer avec le modèle avant les nouvelles modifications et mis les résultats sur wandb. En se faisant, j’ai trouvé un petit bug dans le code et je l'ai corrigé. J'ai aussi appris davantage sur les pyramides Laplacienne en lisant le papier de recherche initial qui les a introduit. En plus, le code qui trace les graphes avait plusieurs inconvenients. Pour cette raison, Léa et moi avons re-écris ce code.</li>
 
             <li>Semaines 7-8 : Commencer à se rencontrer avec Léa deux fois par semaine, ces deux semaines ont été consacrées à ré-exécuter les expériences après que le code a subi quelques modifications pour tester les nouvelles performances. J’avais exécuté les trois types d’expériences suivants : sur des modèles baselines qu’on utilise pour comparer notre modèle, sur le modèle adaptatif qui est notre modèle, et sur le modèle adaptatif dans lequel on utilise la méthode de Fourier comme échantillonneur. Les expériences ont été exécutées sur trois jeux de données classiques utilisés pour entraîner et tester les modèles, CIFAR10, CIFAR100 et TinyImageNet. Toutes les expériences ont été mises sur wandb pour pouvoir mieux visualiser et comparer avec les performances précédentes. Pour ce faire, j'ai dû écrire un script python pour transformer les fichiers JSON qui ont été utilisés pour passer les arguments du code afin de s'adapter aux changements des arguments avec les nouvelles modifications.</li>
 
@@ -38,6 +40,15 @@
         Déploiement du logiciel pour entrainement et inférence sur les grappes de calcul de DRAC et possiblement d'autres institutions. Utilisation de conteneurs et d'environments virtuels Python. <br> 
         <h2>Architecture logicielle et modules principaux de travail: </h2>
         Logiciel bâti sur des modules PyTorch implémentant les composantes de l'ARRN. À partir de ce logiciel, des nouvelles expérimentations et variantes du réseau pourront être crées.
+        <h2> Résumé du rapport : </h2>
+
+        <h2> Summary of the report : </h2>
+        I have been working during this semester on helping Professor Glen Berseth and his PhD student Léa Demeule on the adaptive resolution residual networks (ARRNs) research project.
+
+In deep learning, specifically in computer vision, fixed resolution networks are usually adopted due to the simplicity of their implementation. However, these networks are restricted to a single resolution, which fails to account for the variety of resolutions in real world data. Another type of networks is called adaptive, these networks can operate on different resolutions but are usually difficult and complex to implement and therefore avoided. ARRNs are the first class of adaptive networks that also share the ease of implementation of fixed resolution networks, which makes them both generalizable and easy to use and therefore address the shortcomings of both existing networks. 
+
+In this report, I will be presenting the aspects I have learned during this semester. First, I will discuss how I set up the work environment to be able to work with the codebase and contribute to the project. Then, I will describe the theoretical notions of deep learning I have acquired. Finally, I will talk about my practical contributions that I have made to the project.
+
     </main>
 
 </body>
